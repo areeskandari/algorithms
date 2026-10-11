@@ -40,10 +40,10 @@ def shell_sort(input_list):
                     break
         return input_list
 
-    increment = len(input_list) / 2
+    increment = len(input_list) // 2
     while increment >= 1:
         for start_index in range(increment):
             modified_insertion_sort(input_list, start_index, increment)
-        increment /= 2
+        increment //= 2
 
     return input_list

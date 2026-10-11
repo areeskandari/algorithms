@@ -37,3 +37,9 @@ class TestSorts(unittest.TestCase):
     def test_quick_sort(self):
         """Tests that test list is correctly sorted."""
         self.assertEqual(sorted(self.test_list), quick_sort(self.test_list))
+
+    def test_sort_edge_cases(self):
+        for sort_fn in (merge_sort, shell_sort):
+            for values in ([], [7], [2, 1], [3, 1, 2], [2, 2, 1, 1], [-3, 0, 2, -1]):
+                with self.subTest(algorithm=sort_fn.__name__, values=values):
+                    self.assertEqual(sorted(values), sort_fn(values.copy()))

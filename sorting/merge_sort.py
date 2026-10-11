@@ -54,7 +54,7 @@ def merge_sort(input_list):
     if len(input_list) <= 1:
         return input_list
 
-    middle_index = len(input_list) / 2
+    middle_index = len(input_list) // 2
     left = input_list[:middle_index]
     right = input_list[middle_index:]
 
